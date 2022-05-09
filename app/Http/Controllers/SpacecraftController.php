@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use  Response;
 
 use App\Models\Spacecraft;
 
@@ -23,9 +24,13 @@ class SpacecraftController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Spacecraft $sc)
     {
-        //
+         $data  = $sc->Create();
+         //if($data)
+         //$data['success']  = true;
+         
+         return response($data);
     }
 
     /**
@@ -50,11 +55,18 @@ class SpacecraftController extends Controller
     		
     	//$d = Spacecraft::find($request->id);
     	 
- 		$d = Spacecraft::All();
-    	$d = $sc->getAll('name','Devastator 2');
-    	$d = $sc->getAll('class','Star Destroyer');
-    	$d = $sc->getAll('status','Damaged');
-    	echo json_encode($d);
+ 		//$data = Spacecraft::All();
+    	$data = $sc->getAll($request->method,$request->filter);
+    	//$d = $sc->getAll('class','Star Destroyer');
+    	//$d = $sc->getAll('status','Damaged');
+    	 
+		 $data['success'] = true;
+		 
+    	return response($data);
+ //           ->header('Content-Type', "json")
+   //         ->header('X-Header-One', 'success');
+            
+    	//echo json_encode($d);
      
     }
 
@@ -64,9 +76,12 @@ class SpacecraftController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit(Request $request, Spacecraft $sc)
+    {	
+    
+       $sc->UpdateSc($request->sc_id, $request->price);
+       
+       $data['success'] = true;
     }
 
     /**
@@ -87,8 +102,14 @@ class SpacecraftController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, Spacecraft $sc) 
     {
-        //
-    }
+		$data['success'] = false;
+
+		if($sc->DestroySc($request->sc_id) )
+			$data['success'] = true;
+			
+		return response($data);		
+	}
 }
+

@@ -19,16 +19,18 @@ Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 
 
-
-Route::post('show', [SpacecraftController::class,'show']);
-/*
-
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
 Route::middleware('auth:sanctum')->group(function () {
 
-	Route::get('show/{id}', [SpacecraftController::class,'show']);
+	Route::post('show', [SpacecraftController::class,'show']);
+	Route::post('create', [SpacecraftController::class,'create']);
+	// Idempotent
+	Route::put('edit', [SpacecraftController::class,'edit']);
+	Route::delete('delete', [SpacecraftController::class,'destroy']);
 });
-*/
+
+//Route::post('show', [SpacecraftController::class,'show']);
+ 

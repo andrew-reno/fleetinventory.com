@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="C:\webs\fleetinventory.com\fleetinventory.com.clpprj">
 	<settings><PM_URL><![CDATA[http://localhost/fleetinventory.com/]]></PM_URL><PM_HOME_URL><![CDATA[http://localhost/fleetinventory.com/]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";"/><added value=""/><lastopfiles>
-		<file name="C:\webs\fleetinventory.com\.env"/>
-		<file name="C:\webs\fleetinventory.com\database\migrations\2022_05_06_172705_create_spacecrafts_table.php"/>
-		<file name="C:\webs\fleetinventory.com\app\Http\Kernel.php"/>
-		<file name="C:\webs\fleetinventory.com\app\Models\Spacecraft.php"/>
-		<file name="C:\webs\fleetinventory.com\database\migrations\2019_12_14_000001_create_personal_access_tokens_table.php"/>
+		<file name="C:\webs\fleetinventory.com\routes\api.php"/>
 	</lastopfiles>
 	<errors version="5.11">
 		<errfile name="C:\webs\fleetinventory.com\vendor\symfony\var-dumper\Test\VarDumperTestTrait.php">
@@ -3419,6 +3415,8 @@
 			<todo name="TODO: this fails when comments or contexts are added" pos="17;89"/>
 		</todofile>
 	</todoblock>
+	<dbgurls>
+	</dbgurls>
 	<filescache>
 		<file name="C:\webs\fleetinventory.com\vendor\webmozart\assert\src\Mixin.php" crc="1615291163"/>
 		<file name="C:\webs\fleetinventory.com\vendor\webmozart\assert\src\InvalidArgumentException.php" crc="1615291163"/>
@@ -9879,11 +9877,13 @@
 		<file name="C:\webs\fleetinventory.com\tests\Feature\ExampleTest.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\tests\TestCase.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\tests\CreatesApplication.php" crc="1651593076"/>
+		<file name="C:\webs\fleetinventory.com\storage\framework\views\930cbffa7a0c61d6d369312dc0581f0b66374738.php" crc="1652080166"/>
+		<file name="C:\webs\fleetinventory.com\storage\framework\views\6e0fe28eefd7af3242822a8b0d21e3c1e8986233.php" crc="1652080166"/>
 		<file name="C:\webs\fleetinventory.com\storage\framework\views\0b8a6808268436cadcdaa363abff8d67988e22a4.php" crc="1651857359"/>
-		<file name="C:\webs\fleetinventory.com\routes\web.php" crc="1651593076"/>
+		<file name="C:\webs\fleetinventory.com\routes\web.php" crc="1652081565"/>
 		<file name="C:\webs\fleetinventory.com\routes\console.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\routes\channels.php" crc="1651593076"/>
-		<file name="C:\webs\fleetinventory.com\routes\api.php" crc="1651593076"/>
+		<file name="C:\webs\fleetinventory.com\routes\api.php" crc="1652086093"/>
 		<file name="C:\webs\fleetinventory.com\resources\views\welcome.blade.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\resources\js\bootstrap.js" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\resources\js\app.js" crc="1651593076"/>
@@ -9895,12 +9895,14 @@
 		<file name="C:\webs\fleetinventory.com\lang\en\passwords.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\lang\en\pagination.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\lang\en\auth.php" crc="1651593076"/>
-		<file name="C:\webs\fleetinventory.com\database\seeders\DatabaseSeeder.php" crc="1651593076"/>
+		<file name="C:\webs\fleetinventory.com\database\seeders\UserSeeder.php" crc="1652041934"/>
+		<file name="C:\webs\fleetinventory.com\database\seeders\SpacecraftSeeder.php" crc="1652039245"/>
+		<file name="C:\webs\fleetinventory.com\database\seeders\DatabaseSeeder.php" crc="1652041741"/>
 		<file name="C:\webs\fleetinventory.com\database\migrations\2022_05_06_172705_create_spacecrafts_table.php" crc="1651859709"/>
 		<file name="C:\webs\fleetinventory.com\database\migrations\2019_12_14_000001_create_personal_access_tokens_table.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\database\migrations\2019_08_19_000000_create_failed_jobs_table.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\database\migrations\2014_10_12_100000_create_password_resets_table.php" crc="1651593076"/>
-		<file name="C:\webs\fleetinventory.com\database\migrations\2014_10_12_000000_create_users_table.php" crc="1651593076"/>
+		<file name="C:\webs\fleetinventory.com\database\migrations\2014_10_12_000000_create_users_table.php" crc="1652042000"/>
 		<file name="C:\webs\fleetinventory.com\database\factories\UserFactory.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\config\view.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\config\session.php" crc="1651593076"/>
@@ -9925,8 +9927,8 @@
 		<file name="C:\webs\fleetinventory.com\app\Providers\BroadcastServiceProvider.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\app\Providers\AuthServiceProvider.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\app\Providers\AppServiceProvider.php" crc="1651593076"/>
-		<file name="C:\webs\fleetinventory.com\app\Models\User.php" crc="1651593076"/>
-		<file name="C:\webs\fleetinventory.com\app\Models\Spacecraft.php" crc="1651858025"/>
+		<file name="C:\webs\fleetinventory.com\app\Models\User.php" crc="1652041742"/>
+		<file name="C:\webs\fleetinventory.com\app\Models\Spacecraft.php" crc="1652083516"/>
 		<file name="C:\webs\fleetinventory.com\app\Http\Middleware\VerifyCsrfToken.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\app\Http\Middleware\TrustProxies.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\app\Http\Middleware\TrustHosts.php" crc="1651593076"/>
@@ -9935,13 +9937,18 @@
 		<file name="C:\webs\fleetinventory.com\app\Http\Middleware\PreventRequestsDuringMaintenance.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\app\Http\Middleware\EncryptCookies.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\app\Http\Middleware\Authenticate.php" crc="1651593076"/>
+		<file name="C:\webs\fleetinventory.com\app\Http\Controllers\SpacecraftController.php" crc="1652083851"/>
 		<file name="C:\webs\fleetinventory.com\app\Http\Controllers\Controller.php" crc="1651593076"/>
-		<file name="C:\webs\fleetinventory.com\app\Http\Kernel.php" crc="1651859198"/>
+		<file name="C:\webs\fleetinventory.com\app\Http\Controllers\AuthController.php" crc="1648814103"/>
+		<file name="C:\webs\fleetinventory.com\app\Http\Kernel.php" crc="1652081724"/>
 		<file name="C:\webs\fleetinventory.com\app\Exceptions\Handler.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\app\Console\Kernel.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\webpack.mix.js" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\phpunit.xml" crc="1651593076"/>
+		<file name="C:\webs\fleetinventory.com\index.php" crc="1647721620"/>
 		<file name="C:\webs\fleetinventory.com\fleet-db-dev.sql" crc="1651858607"/>
+		<file name="C:\webs\fleetinventory.com\ajax-post.php" crc="1652083040"/>
 		<file name="C:\webs\fleetinventory.com\.styleci.yml" crc="1651593076"/>
+		<file name="C:\webs\fleetinventory.com\.htaccess" crc="1646847257"/>
 	</filescache>
 </project>
