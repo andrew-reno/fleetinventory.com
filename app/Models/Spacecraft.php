@@ -12,17 +12,29 @@ class Spacecraft extends Model
     //protected $fillable = ['name','class']; 
     protected $guarded = ['id'];
     
+    /**
+	* Find and return a spacecraft by id e.g filter = id param = 2, no filter return all...
+	* @param Condition 1 $filter
+	* @param Condition 2 $param
+	* 
+	* @return
+	*/
     public function getAll($filter = null, $param)
     {
-
         $sc = Spacecraft::query();
 
         if ($filter and $param) {
             $sc ->where($filter,$param);
 		}
+        
         return $sc ->get();
     }
     
+    /**
+	* Create a new spacecraft
+	* 
+	* @return the new object
+	*/
     public function Create()
     { 
 	     try {
@@ -48,15 +60,32 @@ class Spacecraft extends Model
 		return $sc;
     }
     
-    public function UpdateSc($id, $value){
+    /**
+	* 
+	* @param Update by $id
+	* @param todo add interface for full edit all. Only accept changes to price with $value param
+	* 
+	* @return success or fail for api message
+	*/
+    public function UpdateSc($id, $value)
+    {
 		$sc = Spacecraft::find($id);
-		$sc->value = $value;
-		$sc->save();
-		echo json_encode($sc) ;
+		
+		if($sc){
+			$sc->value = $value;
+			$sc->save();
+			return 1;
+		}
+		return 0;
 	}
 	
+	/**
+	* Delete from database
+	* @param spacecraft $id
+	* 
+	* @return 0 or 1 for api message
+	*/
     function DestroySc($id){
-		return parent::destroy($id);
-			 
+		return parent::destroy($id);	 
 	}
 }

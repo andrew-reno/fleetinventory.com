@@ -16,7 +16,8 @@
 					var postData = $(this).serializeArray();
 					var formURL = $('input[type=radio][name=env]:checked').val() + $(this).attr("action");
 					var env = $('input[type=radio][name=env]:checked').attr('id');
-
+					
+					$("#results_data").html("");
 					/* start ajax submission process */
 					$.ajax({
 					    url: formURL,
@@ -45,7 +46,22 @@
 							 } 
 					    },
 					    error: function(jqXHR, textStatus, errorThrown) {
-					        alert('Error occurred!');
+					    	alert('Error occurred!');
+					        
+					        var obj = JSON.stringify(jqXHR.responseJSON);
+					       	obj = JSON.parse(obj)
+					       	 //obj = obj.replace(/\\/g, "");
+					       	 // var obj = JSON.parse(obj)
+					        var t = '';
+							
+							// ES5
+							Object.keys(obj).forEach(function(k){t +=  k + ' - ' + obj[k]});
+							// ES6
+							//Object.keys(obj).forEach(key => {t += key + ' - ' + obj[key]});
+							// ES7
+							//Object.entries(obj).forEach(([key, value]) => {t += key + ' - ' + value})
+
+							$("#results_data").html(t);
 					    }
 					});
 
@@ -97,17 +113,15 @@ $ curl -X POST -F 'name=Administrator' -F 'email=admin@test.com' -F 'password=tp
 	</div>
 	<!-- END ENDPOINT -->
 	
-	 
-	
 	<!-- BEGIN ENDPOINT -->
-	<h1>List all the spaceships allowing filtering by name, class, status</h1>
-	<div class="endpoints">   </p>
+	<div class="endpoints"> <p>List all the spaceships allowing filtering by name, class, status. Show details of a single spaceship by id. Parameter is optional (todo vue.js interface) <span class="org_id_text"></span></p>
 		<form action="show" method="POST" class="api_form">
 			<select name="method">
 				<option value="">all</option>
 				<option value="name">name</option>
 				<option value="class">class</option>
 				<option value="status">status</option>
+				<option value="id">id</option>
 			</select>
 			 
 			 <label>
@@ -119,9 +133,10 @@ $ curl -X POST -F 'name=Administrator' -F 'email=admin@test.com' -F 'password=tp
 	</div>
 	<!-- END ENDPOINT -->
 	
+ 
 	<!-- BEGIN ENDPOINT -->
-	<h1>Ceate a new spaceship</h1>
-	<div class="endpoints">   </p>
+	
+	<div class="endpoints"> <p>Ceate a new spaceship</p>  <span class="org_id_text"></span>
 		<form action="create" method="POST" class="api_form">
 			 
 			  <input type="text" name="token" class="token" placeholder="token">

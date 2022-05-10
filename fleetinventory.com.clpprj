@@ -2,6 +2,15 @@
 <project name="C:\webs\fleetinventory.com\fleetinventory.com.clpprj">
 	<settings><PM_URL><![CDATA[http://localhost/fleetinventory.com/]]></PM_URL><PM_HOME_URL><![CDATA[http://localhost/fleetinventory.com/]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";"/><added value=""/><lastopfiles>
 		<file name="C:\webs\fleetinventory.com\routes\api.php"/>
+		<file name="C:\webs\fleetinventory.com\ajax-post.php"/>
+		<file name="C:\webs\fleetinventory.com\app\Http\Controllers\SpacecraftController.php"/>
+		<file name="C:\webs\fleetinventory.com\app\Models\Spacecraft.php"/>
+		<file name="C:\webs\fleetinventory.com\tests\Unit\UserAccessTest.php"/>
+		<file name="C:\webs\fleetinventory.com\phpunit.xml"/>
+		<file name="C:\webs\fleetinventory.com\tests\TestCase.php"/>
+		<file name="C:\webs\fleetinventory.com\tests\Unit\ExampleTest.php"/>
+		<file name="C:\webs\fleetinventory.com\tests\CreatesApplication.php"/>
+		<file name="C:\webs\fleetinventory.com\README.md"/>
 	</lastopfiles>
 	<errors version="5.11">
 		<errfile name="C:\webs\fleetinventory.com\vendor\symfony\var-dumper\Test\VarDumperTestTrait.php">
@@ -3415,8 +3424,6 @@
 			<todo name="TODO: this fails when comments or contexts are added" pos="17;89"/>
 		</todofile>
 	</todoblock>
-	<dbgurls>
-	</dbgurls>
 	<filescache>
 		<file name="C:\webs\fleetinventory.com\vendor\webmozart\assert\src\Mixin.php" crc="1615291163"/>
 		<file name="C:\webs\fleetinventory.com\vendor\webmozart\assert\src\InvalidArgumentException.php" crc="1615291163"/>
@@ -9873,6 +9880,7 @@
 		<file name="C:\webs\fleetinventory.com\vendor\brick\math\src\BigInteger.php" crc="1629060618"/>
 		<file name="C:\webs\fleetinventory.com\vendor\brick\math\src\BigDecimal.php" crc="1629060618"/>
 		<file name="C:\webs\fleetinventory.com\vendor\autoload.php" crc="1651857326"/>
+		<file name="C:\webs\fleetinventory.com\tests\Unit\UserAccessTest.php" crc="1652190243"/>
 		<file name="C:\webs\fleetinventory.com\tests\Unit\ExampleTest.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\tests\Feature\ExampleTest.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\tests\TestCase.php" crc="1651593076"/>
@@ -9883,7 +9891,7 @@
 		<file name="C:\webs\fleetinventory.com\routes\web.php" crc="1652081565"/>
 		<file name="C:\webs\fleetinventory.com\routes\console.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\routes\channels.php" crc="1651593076"/>
-		<file name="C:\webs\fleetinventory.com\routes\api.php" crc="1652086093"/>
+		<file name="C:\webs\fleetinventory.com\routes\api.php" crc="1652130845"/>
 		<file name="C:\webs\fleetinventory.com\resources\views\welcome.blade.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\resources\js\bootstrap.js" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\resources\js\app.js" crc="1651593076"/>
@@ -9928,7 +9936,7 @@
 		<file name="C:\webs\fleetinventory.com\app\Providers\AuthServiceProvider.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\app\Providers\AppServiceProvider.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\app\Models\User.php" crc="1652041742"/>
-		<file name="C:\webs\fleetinventory.com\app\Models\Spacecraft.php" crc="1652083516"/>
+		<file name="C:\webs\fleetinventory.com\app\Models\Spacecraft.php" crc="1652131538"/>
 		<file name="C:\webs\fleetinventory.com\app\Http\Middleware\VerifyCsrfToken.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\app\Http\Middleware\TrustProxies.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\app\Http\Middleware\TrustHosts.php" crc="1651593076"/>
@@ -9937,7 +9945,7 @@
 		<file name="C:\webs\fleetinventory.com\app\Http\Middleware\PreventRequestsDuringMaintenance.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\app\Http\Middleware\EncryptCookies.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\app\Http\Middleware\Authenticate.php" crc="1651593076"/>
-		<file name="C:\webs\fleetinventory.com\app\Http\Controllers\SpacecraftController.php" crc="1652083851"/>
+		<file name="C:\webs\fleetinventory.com\app\Http\Controllers\SpacecraftController.php" crc="1652168631"/>
 		<file name="C:\webs\fleetinventory.com\app\Http\Controllers\Controller.php" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\app\Http\Controllers\AuthController.php" crc="1648814103"/>
 		<file name="C:\webs\fleetinventory.com\app\Http\Kernel.php" crc="1652081724"/>
@@ -9947,7 +9955,7 @@
 		<file name="C:\webs\fleetinventory.com\phpunit.xml" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\index.php" crc="1647721620"/>
 		<file name="C:\webs\fleetinventory.com\fleet-db-dev.sql" crc="1651858607"/>
-		<file name="C:\webs\fleetinventory.com\ajax-post.php" crc="1652083040"/>
+		<file name="C:\webs\fleetinventory.com\ajax-post.php" crc="1652171765"/>
 		<file name="C:\webs\fleetinventory.com\.styleci.yml" crc="1651593076"/>
 		<file name="C:\webs\fleetinventory.com\.htaccess" crc="1646847257"/>
 	</filescache>

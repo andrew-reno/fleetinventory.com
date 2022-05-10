@@ -14,24 +14,14 @@ class SpacecraftController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+    public function index(){}
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Spacecraft $sc)
-    {
-         $data  = $sc->Create();
-         //if($data)
-         //$data['success']  = true;
-         
-         return response($data);
-    }
+    public function create(){}
 
     /**
      * Store a newly created resource in storage.
@@ -39,9 +29,16 @@ class SpacecraftController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Spacecraft $sc)
     {
-        //
+		$data = $sc->Create();
+		
+		if($data)
+			$data['success'] = true;
+		else
+			$data['success'] = false;
+
+		return response($data);
     }
 
     /**
@@ -52,22 +49,18 @@ class SpacecraftController extends Controller
      */
     public function show(Request $request, Spacecraft $sc)
     {
-    		
-    	//$d = Spacecraft::find($request->id);
-    	 
- 		//$data = Spacecraft::All();
+    	$request->validate([
+    		'method'  => 'required' 
+        ]);
+         
     	$data = $sc->getAll($request->method,$request->filter);
-    	//$d = $sc->getAll('class','Star Destroyer');
-    	//$d = $sc->getAll('status','Damaged');
     	 
-		 $data['success'] = true;
-		 
+    	if(count($data))
+			$data['success'] = true;
+		else
+			$data['success'] = false;
+		  
     	return response($data);
- //           ->header('Content-Type', "json")
-   //         ->header('X-Header-One', 'success');
-            
-    	//echo json_encode($d);
-     
     }
 
     /**
@@ -77,11 +70,20 @@ class SpacecraftController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Request $request, Spacecraft $sc)
-    {	
-    
-       $sc->UpdateSc($request->sc_id, $request->price);
-       
-       $data['success'] = true;
+    {	   
+     	$request->validate([
+            'sc_id' => 'required',
+            'price' => 'required' 
+        ]);
+        
+       if($sc->UpdateSc($request->sc_id, $request->price))
+       		$data['success'] = true;
+       else
+       {	$data['success'] = false;
+       		$data['message'] = "No record found to edit";
+		}
+		
+		return response($data);
     }
 
     /**
@@ -91,9 +93,20 @@ class SpacecraftController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
+    	$request->validate([
+            'sc_id' 	 => 'required',
+            'price' 	 => 'required' 
+        ]);
+        
         //
+        $sc = new Spacecraft;
+        $data = $sc->UpdateSc($request->id, $request->value);
+        if($data)
+         	$data['success'] = true;
+        
+        echo json_encode($data);
     }
 
     /**
@@ -104,6 +117,10 @@ class SpacecraftController extends Controller
      */
     public function destroy(Request $request, Spacecraft $sc) 
     {
+    	$request->validate([
+            'sc_id' 	 => 'required'
+        ]);
+        
 		$data['success'] = false;
 
 		if($sc->DestroySc($request->sc_id) )
@@ -112,4 +129,3 @@ class SpacecraftController extends Controller
 		return response($data);		
 	}
 }
-

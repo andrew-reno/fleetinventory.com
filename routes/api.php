@@ -15,22 +15,27 @@ use App\Http\Controllers\SpacecraftController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+/**
+* Register new user to obtain a token for future API requests
+*/
 Route::post('register', [AuthController::class, 'register']);
+
+/**
+* Login a user with a barer token obtained from us
+*/
 Route::post('login', [AuthController::class, 'login']);
 
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
+/**
+* Restriced access with sanctum middleware. 
+* Ops can only be performed by an authorised member of the imperial fleet  
+*/
 Route::middleware('auth:sanctum')->group(function () {
 
 	Route::post('show', [SpacecraftController::class,'show']);
-	Route::post('create', [SpacecraftController::class,'create']);
-	// Idempotent
+	Route::post('create', [SpacecraftController::class,'store']);
 	Route::put('edit', [SpacecraftController::class,'edit']);
 	Route::delete('delete', [SpacecraftController::class,'destroy']);
 });
 
-//Route::post('show', [SpacecraftController::class,'show']);
  
